@@ -18,3 +18,7 @@ const convert = (sum, count, discount) => {
 
   return res;
 };
+
+console.log(convert(35000, 11, 'METHED'));
+console.log(convert(25000, 11, 'G3H2Z1'));
+console.log(convert(2000, 11, 'G3H2Z1'));
