@@ -1,9 +1,9 @@
 const gcd = (x, y) => {
-  if (typeof x !== 'number' || typeof y !== 'number') {
+  if (isNaN(x) || isNaN(y)) {
     return false;
   }
 
-  while (y) {
+  if (y) {
     let res = y;
     y = x % y;
     x = res;
