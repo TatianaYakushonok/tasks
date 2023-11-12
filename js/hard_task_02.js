@@ -16,4 +16,6 @@ const getMinNum = (x, y) => {
   return minNum;
 };
 
+console.group('Модуль 4 урок 4 задача 2доп.');
 console.log(getMinNum(num1, num2));
+console.groupEnd();

@@ -9,4 +9,6 @@ const convertStr = (str) => {
   return res;
 };
 
+console.group('Модуль 4 урок 4 задача 2');
 console.log(convertStr('привет Мир'));
+console.groupEnd();

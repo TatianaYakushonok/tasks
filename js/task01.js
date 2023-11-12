@@ -10,4 +10,6 @@ const convertEurToRub = (eur) => {
   return res;
 };
 
+console.group('Модуль 4 урок 4 задача 1');
 console.log(`Стоимость EUR составляет ${convertEurToRub(100).toLocaleString()} ₽`);
+console.groupEnd();

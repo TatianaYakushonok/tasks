@@ -16,8 +16,9 @@ const gcd = (x, y) => {
   return x;
 };
 
-console.log(gcd(12, 13));
+console.group('Модуль 4 урок 4 задача 1доп.');
 console.log(gcd(9, 3));
 console.log(gcd(10, 15));
 console.log(gcd(10, 0));
 console.log(gcd(0, 12));
+console.groupEnd();
