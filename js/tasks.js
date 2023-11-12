@@ -32,12 +32,18 @@ console.groupEnd();
 /*===================== Задача 4 =======================*/
 
 {
-  const minSum = 100;
+  const minDenominBanknote = 100;
   const sum = parseInt(prompt('Введите сумму, которую хотите снять'));
 
-  const res = sum >= minSum && sum % 100 === 0 ? 'Можете снимать' : 'Отказано! Минимальный номинал купюр к снятию 100 ₽';
+  if (!isNaN(sum) && sum > 0) {
+    const res = sum % minDenominBanknote === 0 ? 'Можете снимать' : 'Отказано! Минимальный номинал купюр к снятию 100 ₽';
 
-  console.group('Модуль 4 урок 3 задача 4');
-  console.log(res);
-  console.groupEnd();
+    console.group('Модуль 4 урок 3 задача 4');
+    console.log(res);
+    console.groupEnd();
+  } else {
+    console.group('Модуль 4 урок 3 задача 4');
+    console.log('Вы ввели некорректные данные');
+    console.groupEnd();
+  }
 }

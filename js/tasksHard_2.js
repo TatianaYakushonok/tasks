@@ -13,17 +13,19 @@
     console.log('Вы ввели не число. Сумма не может быть расчитана');
     console.groupEnd();
   } else {
-    if (amount <= 15000 && amount > 0) {
-      tax = amount * 0.13;
+    let sum = amount;
+
+    if (sum > 50000) {
+      tax += (sum - 50000) * 0.3;
+      sum = 50000;
     }
 
-    if (amount > 15000 && amount <= 50000) {
-      tax = (amount - 15000) * 0.2 + 15000 * 0.13;
+    if (sum > 15000) {
+      tax += (sum - 15000) * 0.2;
+      sum = 15000;
     }
 
-    if (amount > 50000) {
-      tax = (amount - 50000) * 0.3 + (50000 - 15000) * 0.2 + 15000 * 0.13;
-    }
+    tax += sum * 0.13;
 
     console.group('Модуль 4 урок 3 задача 2доп.');
     console.log(`Сумма налога на доход составляет ${tax} ₽`);
