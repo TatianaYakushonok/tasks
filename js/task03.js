@@ -1,3 +1,7 @@
+'use strict';
+
+// Модуль 4 урок 4 задача 3
+
 const convert = (sum, count, discount) => {
   let res = sum;
   if (count > 10) {

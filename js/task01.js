@@ -1,3 +1,4 @@
+'use strict';
 // Модуль 4 урок 4 задача 1
 
 const convertEurToRub = (eur) => {
@@ -6,7 +7,7 @@ const convertEurToRub = (eur) => {
   const oneEur = oneUsd * 1.2;
   const res = currentEur * oneEur;
 
-  return `Стоимость €${currentEur} составляет ${res.toLocaleString()} ₽`;
+  return res;
 };
 
-console.log(convertEurToRub(100));
+console.log(`Стоимость EUR составляет ${convertEurToRub(100).toLocaleString()} ₽`);

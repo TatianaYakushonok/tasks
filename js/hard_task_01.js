@@ -1,3 +1,7 @@
+'use strict';
+
+// Модуль 4 урок 4 задача 1доп.
+
 const gcd = (x, y) => {
   if (isNaN(x) || isNaN(y)) {
     return false;

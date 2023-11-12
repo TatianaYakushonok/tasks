@@ -1,3 +1,4 @@
+'use strict';
 // Модуль 4 урок 4 задача 2
 
 const convertStr = (str) => {
