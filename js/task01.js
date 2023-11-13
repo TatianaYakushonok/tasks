@@ -1,15 +1,13 @@
 'use strict';
-// Модуль 4 урок 4 задача 1
+// Модуль 4 урок 5 задача 1
 
-const convertEurToRub = (eur) => {
-  const currentEur = eur;
-  const oneUsd = 75;
-  const oneEur = oneUsd * 1.2;
-  const res = currentEur * oneEur;
+console.group('Модуль 4 урок 5 задача 1');
 
-  return res;
-};
+for (let i = 1; i <= 10; i++) {
+  console.log('-------------------------');
+  for (let j = 1; j <= 10; j++) {
+    console.log(`${i}^${j} = ${i ** j}`);
+  }
+}
 
-console.group('Модуль 4 урок 4 задача 1');
-console.log(`Стоимость EUR составляет ${convertEurToRub(100).toLocaleString()} ₽`);
 console.groupEnd();
