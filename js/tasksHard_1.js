@@ -7,9 +7,9 @@
   const amount = parseInt(prompt('Введите сумму заработка'));
   let tax = 0;
 
-  if (isNaN(amount)) {
+  if (isNaN(amount) || amount < 0) {
     console.group('Модуль 4 урок 3 задача 1доп.');
-    console.log('Вы ввели не число. Сумма не может быть расчитана');
+    console.log('Вы ввели некорректные данные. Сумма не может быть расчитана');
     console.groupEnd();
   } else {
     if (amount < 15000 && amount > 0) {
