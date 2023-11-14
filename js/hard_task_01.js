@@ -7,7 +7,10 @@ const gcd = (x, y) => {
     return false;
   }
 
-  if (y) {
+  x = Math.abs(x);
+  y = Math.abs(y);
+
+  while (y) {
     let res = y;
     y = x % y;
     x = res;
@@ -20,5 +23,6 @@ console.group('Модуль 4 урок 4 задача 1доп.');
 console.log(gcd(9, 3));
 console.log(gcd(10, 15));
 console.log(gcd(10, 0));
-console.log(gcd(0, 12));
+console.log(gcd(24, 12));
+console.log(gcd(0, 0));
 console.groupEnd();
