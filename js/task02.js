@@ -14,4 +14,7 @@ console.log(isPrime(1));
 console.log(isPrime(2));
 console.log(isPrime(9));
 console.log(isPrime(11));
+console.log(isPrime(151));
+console.log(isPrime(911));
+console.log(isPrime(1987));
 console.groupEnd();
