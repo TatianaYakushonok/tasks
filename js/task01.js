@@ -1,13 +1,13 @@
 'use strict';
-// Модуль 4 урок 5 задача 1
+// Модуль 4 урок 6 задача 1
 
-console.group('Модуль 4 урок 5 задача 1');
+const allStudents = ['Иванов', 'Петров', 'Сидоров', 'Кузнецов', 'Смирнов', 'Попов', 'Соколов'];
+const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
 
-for (let i = 1; i <= 10; i++) {
-  console.log('-------------------------');
-  for (let j = 1; j <= 10; j++) {
-    console.log(`${i}^${j} = ${i ** j}`);
-  }
-}
+const filter = (all, failed) => {
+  return all.filter((student) => !failed.includes(student));
+};
 
+console.group('Модуль 4 урок 6 задача 1');
+console.log(filter(allStudents, failedStudents));
 console.groupEnd();
