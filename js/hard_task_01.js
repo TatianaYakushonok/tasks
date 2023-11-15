@@ -10,10 +10,16 @@ const gcd = (x, y) => {
   x = Math.abs(x);
   y = Math.abs(y);
 
-  while (y) {
-    let res = y;
-    y = x % y;
-    x = res;
+  if (x === 0) {
+    return y;
+  }
+
+  while (x != y && x > 0 && y > 0) {
+    if (x > y) {
+      x = x - y;
+    } else {
+      y = y - x;
+    }
   }
 
   return x;
