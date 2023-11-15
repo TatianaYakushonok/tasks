@@ -1,15 +1,17 @@
 'use strict';
 
-// Модуль 4 урок 5 задача 3
+// Модуль 4 урок 6 задача 3
 
-const reverseStr = (str) => {
-  let res = '';
-  for (let i = str.length; i > 0; i--) {
-    res += str[i - 1];
+const names = ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+
+const addPrefix = (arrName, prefix) => {
+  const resArr = [];
+  for (let i = 0; i < arrName.length; i++) {
+    resArr.push(`${prefix} ${arrName[i]}`);
   }
-  return res;
+  return resArr;
 };
 
-console.group('Модуль 4 урок 5 задача 3');
-console.log(reverseStr('Привет мир'));
+console.group('Модуль 4 урок 6 задача 3');
+console.log(addPrefix(names, 'Mr'));
 console.groupEnd();

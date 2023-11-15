@@ -1,20 +1,12 @@
 'use strict';
-// Модуль 4 урок 5 задача 2
+// Модуль 4 урок 6 задача 2
 
-const isPrime = (num) => {
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) return false;
-  }
-  return num > 1;
+const allCashbox = [4500, 3210, 650, 1250, 7830, 990, 13900, 370];
+
+const getAverageValue = (cash) => {
+  return Math.floor(cash.reduce((acc, cashBox) => (acc += cashBox), 0) / cash.length);
 };
 
-console.group('Модуль 4 урок 5 задача 2');
-console.log(isPrime(5));
-console.log(isPrime(1));
-console.log(isPrime(2));
-console.log(isPrime(9));
-console.log(isPrime(11));
-console.log(isPrime(151));
-console.log(isPrime(911));
-console.log(isPrime(1987));
+console.group('Модуль 4 урок 6 задача 2');
+console.log(getAverageValue(allCashbox));
 console.groupEnd();
