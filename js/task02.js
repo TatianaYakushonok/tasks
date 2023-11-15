@@ -8,5 +8,5 @@ const getAverageValue = (cash) => {
 };
 
 console.group('Модуль 4 урок 6 задача 2');
-console.log(getAverageValue(allCashbox));
+console.log(`Средний чек за день: ${getAverageValue(allCashbox)} ₽`);
 console.groupEnd();
