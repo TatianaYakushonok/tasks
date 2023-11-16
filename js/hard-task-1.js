@@ -15,7 +15,10 @@
   ];
 
   const getAveragePriceGoods = (cash) => {
-    return Math.floor(cash.reduce((acc, price) => (acc += price[1] / price[0]), 0) / cash.length);
+    const countGoods = cash.reduce((acc, count) => (acc += count[0]), 0);
+    const totalPrice = cash.reduce((acc, price) => (acc += price[1]), 0);
+    const averagePrice = Math.floor(totalPrice / countGoods);
+    return averagePrice;
   };
 
   const averagePriceGoods = getAveragePriceGoods(allCashbox).toLocaleString();
