@@ -18,7 +18,9 @@
     return Math.floor(cash.reduce((acc, price) => (acc += price[1] / price[0]), 0) / cash.length);
   };
 
+  const averagePriceGoods = getAveragePriceGoods(allCashbox).toLocaleString();
+
   console.group('Модуль 4 урок 6 задача 1доп.');
-  console.log(`Средняя стоимость одного товара: ${getAveragePriceGoods(allCashbox)} ₽`);
+  console.log(`Средняя стоимость одного товара: ${averagePriceGoods} ₽`);
   console.groupEnd();
 }

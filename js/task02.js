@@ -7,6 +7,8 @@ const getAverageValue = (cash) => {
   return Math.floor(cash.reduce((acc, cashBox) => (acc += cashBox), 0) / cash.length);
 };
 
+const averageCashBox = getAverageValue(allCashbox).toLocaleString();
+
 console.group('Модуль 4 урок 6 задача 2');
-console.log(`Средний чек за день: ${getAverageValue(allCashbox)} ₽`);
+console.log(`Средний чек за день: ${averageCashBox} ₽`);
 console.groupEnd();
