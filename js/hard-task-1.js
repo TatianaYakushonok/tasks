@@ -18,6 +18,7 @@
     const countGoods = cash.reduce((acc, count) => (acc += count[0]), 0);
     const totalPrice = cash.reduce((acc, price) => (acc += price[1]), 0);
     const averagePrice = Math.floor(totalPrice / countGoods);
+
     return averagePrice;
   };
 
