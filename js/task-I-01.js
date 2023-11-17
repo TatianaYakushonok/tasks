@@ -4,7 +4,7 @@
 const generateRandomNumbers = (len) => {
   const arr = [];
   for (let i = 0; i < len; i++) {
-    const randomNum = Math.floor(Math.random() * 101);
+    const randomNum = Math.ceil(Math.random() * 100);
     arr.push(randomNum);
   }
   return arr;

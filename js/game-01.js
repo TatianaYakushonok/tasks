@@ -3,7 +3,7 @@
 // Модуль 4 урок 7 задача II-1
 
 const guessNumber = () => {
-  const randomNum = Math.floor(Math.random() * 101);
+  const randomNum = Math.ceil(Math.random() * 100);
 
   while (true) {
     const userNum = prompt('Введи число от 1 до 100');
