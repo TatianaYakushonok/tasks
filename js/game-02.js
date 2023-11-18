@@ -5,8 +5,13 @@
   const guessNumber = () => {
     const arrNum = [];
 
-    const num1 = parseInt(prompt('Введи первое число'));
-    const num2 = parseInt(prompt('Введи второе число'));
+    let num1 = parseInt(prompt('Введите первое число'));
+    let num2 = parseInt(prompt('Введите второе число'));
+
+    if (!num1 || !num2) {
+      alert('Введите число');
+      guessNumber();
+    }
 
     const min = Math.min(num1, num2);
     const max = Math.max(num1, num2);
@@ -20,7 +25,7 @@
         break;
       }
 
-      const userNum = prompt(`Введите число от ${min} до ${max}. Количество попыток: ${count} `);
+      const userNum = prompt(`Введите число от ${min} до ${max}. Количество попыток: ${count}`);
 
       if (arrNum.includes(+userNum)) {
         alert('Это число вы уже вводили');
@@ -29,21 +34,19 @@
         arrNum.push(+userNum);
       }
 
-      if (+userNum) {
-        if (+userNum > randomNum) {
-          count--;
-          alert('Меньше');
-        } else if (+userNum < randomNum) {
-          count--;
-          alert('Больше');
-        } else if (+userNum === randomNum) {
-          alert('Правильно');
-          break;
-        }
-      } else if (userNum === null) {
+      if (userNum === null) {
         break;
       } else if (isNaN(+userNum) || +userNum === 0) {
         alert('Введите число');
+      } else if (+userNum > randomNum) {
+        count--;
+        alert('Меньше');
+      } else if (+userNum < randomNum) {
+        count--;
+        alert('Больше');
+      } else if (+userNum === randomNum) {
+        alert('Правильно');
+        break;
       }
     }
   };
