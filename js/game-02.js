@@ -27,6 +27,8 @@
 
       const userNum = prompt(`Введите число от ${min} до ${max}. Количество попыток: ${count}`);
 
+      if (userNum === null) break;
+
       if (arrNum.includes(+userNum)) {
         alert('Это число вы уже вводили');
         continue;
@@ -34,19 +36,23 @@
         arrNum.push(+userNum);
       }
 
-      if (userNum === null) {
-        break;
-      } else if (isNaN(+userNum) || +userNum === 0) {
-        alert('Введите число');
-      } else if (+userNum > randomNum) {
-        count--;
-        alert('Меньше');
-      } else if (+userNum < randomNum) {
-        count--;
-        alert('Больше');
-      } else if (+userNum === randomNum) {
-        alert('Правильно');
-        break;
+      // prettier-ignore
+      switch (true) {
+        case (isNaN(+userNum) || +userNum === 0):
+          alert('Введите число');
+          break;
+        case (+userNum < randomNum):
+          alert('Больше');
+          break;
+        case (+userNum > randomNum):
+          alert('Меньше');
+          break;
+        case (+userNum === randomNum):
+          alert('Правильно');
+          break;
+        default:
+          alert('Введите число');
+          break;
       }
     }
   };

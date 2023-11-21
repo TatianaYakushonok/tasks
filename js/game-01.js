@@ -8,17 +8,25 @@ const guessNumber = () => {
   while (true) {
     const userNum = prompt('Введите число от 1 до 100');
 
-    if (userNum === null) {
-      break;
-    } else if (isNaN(+userNum) || +userNum === 0) {
-      alert('Введите число');
-    } else if (+userNum > randomNum) {
-      alert('Меньше');
-    } else if (+userNum < randomNum) {
-      alert('Больше');
-    } else if (+userNum === randomNum) {
-      alert('Правильно');
-      break;
+    if (userNum === null) break;
+
+    // prettier-ignore
+    switch (true) {
+      case (isNaN(+userNum) || +userNum === 0):
+        alert('Введите число');
+        break;
+      case (+userNum < randomNum):
+        alert('Больше');
+        break;
+      case (+userNum > randomNum):
+        alert('Меньше');
+        break;
+      case (+userNum === randomNum):
+        alert('Правильно');
+        break;
+      default:
+        alert('Введите число');
+        break;
     }
   }
 };

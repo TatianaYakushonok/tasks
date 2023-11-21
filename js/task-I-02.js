@@ -8,8 +8,7 @@
     const min = Math.min(m, n);
 
     for (let i = 0; i < len; i++) {
-      const randomNum = Math.floor(min + Math.random() * (max + 1 - min));
-      arr.push(randomNum);
+      arr.push(Math.floor(min + Math.random() * (max + 1 - min)));
     }
     return arr;
   };
