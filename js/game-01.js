@@ -31,4 +31,4 @@ const guessNumber = () => {
   }
 };
 
-guessNumber();
+//guessNumber();
