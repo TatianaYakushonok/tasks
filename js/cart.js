@@ -38,7 +38,8 @@ const cart = {
 };
 
 console.group('Модуль 4 урок 8 задача 1');
-cart.add('Телевизор LG', 45000, 10);
-cart.add('Sony PlayStation', 35000, 5);
+cart.add('Телевизор LG', 45000, 1);
+cart.add('Sony PlayStation 5', 35000, 1);
+cart.add('Скейтборд', 15000, 1);
 cart.print();
 console.groupEnd();
