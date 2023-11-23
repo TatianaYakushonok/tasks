@@ -9,14 +9,7 @@ const cart = {
     return this.totalPrice;
   },
   add(name, price, count = 1) {
-    const objGoods = Object.assign(
-      {},
-      {
-        name: name,
-        price: price,
-        count: count,
-      },
-    );
+    const objGoods = Object.assign({}, { name, price, count });
     this.items.push(objGoods);
     this.calculateItemPrice();
     this.increaseCount(count);
