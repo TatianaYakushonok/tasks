@@ -8,7 +8,7 @@ const cart = {
     return this.calculateItemPrice();
   },
   add(name, price, count = 1) {
-    const objGoods = Object.assign({}, { name, price, count });
+    const objGoods = Object.assign({}, {name, price, count});
     this.items.push(objGoods);
     this.increaseCount(count);
   },
@@ -16,7 +16,10 @@ const cart = {
     return (this.count += num);
   },
   calculateItemPrice() {
-    return this.items.reduce((acc, item) => (acc += item.price * item.count), 0);
+    return this.items.reduce(
+        (acc, item) => (acc += item.price * item.count),
+        0,
+    );
   },
   clear() {
     this.items = [];
@@ -24,7 +27,8 @@ const cart = {
     this.count = 0;
   },
   print() {
-    console.log(`${JSON.stringify(this.items)} \n Общая стоимость товаров: ${this.totalPrice.toLocaleString()} ₽`);
+    console.log(`${JSON.stringify(this.items)} 
+      \n Общая стоимость товаров: ${this.totalPrice.toLocaleString()} ₽`);
   },
 };
 

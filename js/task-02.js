@@ -24449,9 +24449,7 @@ const listIPv4 = [
   '10.0.32.20',
 ];
 
-const getCountIPv4 = (arr) => {
-  return new Set(arr).size;
-};
+const getCountIPv4 = (arr) => new Set(arr).size;
 
 console.group('Модуль 4 урок 9 задача 2');
 console.log(getCountIPv4(listIPv4));
