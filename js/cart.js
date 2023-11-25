@@ -1,5 +1,5 @@
 'use strict';
-// Модуль 4 урок 9 задача 1
+// Модуль 4 урок 11 задача 2 this
 
 const cart = {
   items: [],
@@ -42,7 +42,7 @@ const cart = {
   },
 };
 
-console.group('Модуль 4 урок 9 задача 1');
+console.group('Модуль 4 урок 11 задача 2 this');
 cart.setDiscount = 'NEWYEAR';
 cart.add('Телевизор LG', 45000, 1);
 cart.add('Sony PlayStation 5', 35000, 1);
