@@ -1,6 +1,6 @@
 'use strict';
 
-// Модуль 4 урок 7 задача II-1
+// Модуль 4 урок 11 задача 1
 
 const getRandomNum = () => {
   const random = Math.floor(Math.random() * 100) + 1;
@@ -36,4 +36,4 @@ const guessNumber = () => {
   return guessNumber();
 };
 
-guessNumber();
+// guessNumber();
