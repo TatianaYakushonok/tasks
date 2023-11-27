@@ -17,7 +17,7 @@ const cart = {
     return this.calculateItemPrice();
   },
   add(name, price, count = 1) {
-    const objGoods = Object.assign({}, {name, price, count});
+    const objGoods = Object.assign({}, { name, price, count });
     this.items.push(objGoods);
     this.increaseCount(count);
   },
@@ -27,7 +27,7 @@ const cart = {
   calculateItemPrice() {
     return this.items.reduce((acc, item) => {
       const discount = (item.price * this.discount) / 100;
-      acc += (item.price - discount) * item.count;
+      acc += item.price * item.count - discount;
       return acc;
     }, 0);
   },
@@ -43,7 +43,7 @@ const cart = {
 };
 
 console.group('Модуль 4 урок 11 задача 2 this');
-cart.setDiscount = 'NEWYEAR';
+cart.setDiscount = 'METHED';
 cart.add('Телевизор LG', 45000, 1);
 cart.add('Sony PlayStation 5', 35000, 1);
 cart.add('Скейтборд', 15000, 1);
