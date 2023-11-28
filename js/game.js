@@ -24,27 +24,29 @@
 
       if (str === null) return;
 
-      const playerFigure = lang.filter((word) => !word.indexOf(str)).join('');
+      // prettier-ignore
+      const playerFigure = lang
+          .filter((word) => !word.indexOf(str.toLowerCase()))
+          .join('');
 
       if (!playerFigure) {
         alert('Введите корректное значение');
         return start();
       }
 
-      // prettier-ignore
       switch (true) {
-        case ((computerFigure === 'камень' && playerFigure === 'ножницы') ||
-              (computerFigure === 'ножницы' && playerFigure === 'бумага') ||
-              (computerFigure === 'бумага' && playerFigure === 'камень')):
+        case (computerFigure === 'камень' && playerFigure === 'ножницы') ||
+          (computerFigure === 'ножницы' && playerFigure === 'бумага') ||
+          (computerFigure === 'бумага' && playerFigure === 'камень'):
           alert(`
             Компьютер: ${computerFigure}
             Вы: ${playerFigure}
             Компьютер выиграл!`);
           result.computer++;
           break;
-        case ((computerFigure === 'ножницы' && playerFigure === 'камень') ||
-              (computerFigure === 'бумага' && playerFigure === 'ножницы') ||
-              (computerFigure === 'камень' && playerFigure === 'бумага')):
+        case (computerFigure === 'ножницы' && playerFigure === 'камень') ||
+          (computerFigure === 'бумага' && playerFigure === 'ножницы') ||
+          (computerFigure === 'камень' && playerFigure === 'бумага'):
           alert(`
             Компьютер: ${computerFigure}
             Вы: ${playerFigure}
