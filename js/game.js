@@ -3,6 +3,30 @@
 (() => {
   const FIGURE_ENG = ['rock', 'scissors', 'paper'];
   const FIGURE_RU = ['камень', 'ножницы', 'бумага'];
+  const i18Obj = {
+    en: {
+      figure: FIGURE_ENG,
+      computer: 'PC',
+      player: 'You',
+      computerWinner: 'PC winner',
+      playerWinner: 'You winner',
+      correctValue: 'Enter the correct value',
+      draw: 'Draw',
+      playGame: 'Playing more',
+      res: 'Game Result',
+    },
+    ru: {
+      figure: FIGURE_RU,
+      computer: 'Компьютер',
+      player: 'Вы',
+      computerWinner: 'Компьютер победитель',
+      playerWinner: 'Вы победитель',
+      correctValue: 'Введите корректное значение',
+      draw: 'Ничья',
+      playGame: 'Играем еще',
+      res: 'Результат игры:',
+    },
+  };
 
   const getRandomIntInclusive = (min, max) =>
     Math.floor(Math.random() * (max - min + 1) + min);
@@ -13,71 +37,87 @@
       computer: 0,
     };
 
-    const lang =
-      language === 'EN' || language === 'ENG' ? FIGURE_ENG : FIGURE_RU;
+    const lang = language === 'EN' || language === 'ENG' ? 'en' : 'ru';
+    const {
+      figure,
+      computer,
+      player,
+      computerWinner,
+      playerWinner,
+      correctValue,
+      draw,
+      playGame,
+      res,
+    } = i18Obj[lang];
 
     return function start() {
-      const randomNumber = getRandomIntInclusive(0, lang.length - 1);
-      const computerFigure = lang[randomNumber];
-      const str = prompt(`${lang.join(', ')}?`);
+      const randomNumber = getRandomIntInclusive(0, figure.length - 1);
+      const computerFigure = figure[randomNumber];
+      const str = prompt(`${figure.join(', ')}?`);
       let winner;
 
       if (str === null) return;
 
       // prettier-ignore
-      const playerFigure = lang
+      const playerFigure = figure
           .filter((word) => !word.indexOf(str.toLowerCase()))
           .join('');
 
       if (!playerFigure) {
-        alert('Введите корректное значение');
+        alert(correctValue);
         return start();
       }
 
       switch (true) {
         case (computerFigure === 'камень' && playerFigure === 'ножницы') ||
+          (computerFigure === 'rock' && playerFigure === 'scissors') ||
           (computerFigure === 'ножницы' && playerFigure === 'бумага') ||
-          (computerFigure === 'бумага' && playerFigure === 'камень'):
+          (computerFigure === 'scissors' && playerFigure === 'paper') ||
+          (computerFigure === 'бумага' && playerFigure === 'камень') ||
+          (computerFigure === 'paper' && playerFigure === 'rock'):
           alert(`
-            Компьютер: ${computerFigure}
-            Вы: ${playerFigure}
-            Компьютер выиграл!`);
+            ${computer}: ${computerFigure}
+            ${player}: ${playerFigure}
+            ${computerWinner}!`);
           result.computer++;
           break;
         case (computerFigure === 'ножницы' && playerFigure === 'камень') ||
+          (computerFigure === 'scissors' && playerFigure === 'rock') ||
           (computerFigure === 'бумага' && playerFigure === 'ножницы') ||
-          (computerFigure === 'камень' && playerFigure === 'бумага'):
+          (computerFigure === 'paper' && playerFigure === 'scissors') ||
+          (computerFigure === 'камень' && playerFigure === 'бумага') ||
+          (computerFigure === 'rock' && playerFigure === 'paper'):
           alert(`
-            Компьютер: ${computerFigure}
-            Вы: ${playerFigure}
-            Вы выиграли!`);
+            ${computer}: ${computerFigure}
+            ${player}: ${playerFigure}
+            ${playerWinner}!`);
           result.player++;
           break;
         default:
           alert(`
-            Компьютер: ${computerFigure}
-            Вы: ${playerFigure}
-            Ничья!`);
+            ${computer}: ${computerFigure}
+            ${player}: ${playerFigure}
+            ${draw}!`);
           break;
       }
 
-      const play = confirm('Играем еще?');
+      const play = confirm(`${playGame}?`);
       if (play) {
         return start();
       } else {
         if (result.computer < result.player) {
-          winner = 'Вы победитель!';
+          winner = `${playerWinner}!`;
         } else if (result.computer > result.player) {
-          winner = 'Компьютер победитель!';
+          winner = `${computerWinner}!`;
         } else {
-          winner = 'Ничья!';
+          winner = `${draw}!`;
         }
 
         alert(`
-          Результат игры:
+          ${res}:
           ---------------------------
-          Компьютер: ${result.computer}
-          Вы: ${result.player}
+          ${computer}: ${result.computer}
+          ${player}: ${result.player}
           ---------------------------
           ${winner}`);
         return;
