@@ -69,35 +69,30 @@
       }
 
       switch (true) {
-        case (computerFigure === 'камень' && playerFigure === 'ножницы') ||
-          (computerFigure === 'rock' && playerFigure === 'scissors') ||
-          (computerFigure === 'ножницы' && playerFigure === 'бумага') ||
-          (computerFigure === 'scissors' && playerFigure === 'paper') ||
-          (computerFigure === 'бумага' && playerFigure === 'камень') ||
-          (computerFigure === 'paper' && playerFigure === 'rock'):
+        case computerFigure === playerFigure:
+          alert(`
+            ${computer}: ${computerFigure}
+            ${player}: ${playerFigure}
+            ${draw}!`);
+          break;
+        case (['камень', 'rock'].includes(computerFigure) &&
+          ['ножницы', 'scissors'].includes(playerFigure)) ||
+          (['ножницы', 'scissors'].includes(computerFigure) &&
+            ['бумага', 'paper'].includes(playerFigure)) ||
+          (['бумага', 'paper'].includes(computerFigure) &&
+            ['камень', 'rock'].includes(playerFigure)):
           alert(`
             ${computer}: ${computerFigure}
             ${player}: ${playerFigure}
             ${computerWinner}!`);
           result.computer++;
           break;
-        case (computerFigure === 'ножницы' && playerFigure === 'камень') ||
-          (computerFigure === 'scissors' && playerFigure === 'rock') ||
-          (computerFigure === 'бумага' && playerFigure === 'ножницы') ||
-          (computerFigure === 'paper' && playerFigure === 'scissors') ||
-          (computerFigure === 'камень' && playerFigure === 'бумага') ||
-          (computerFigure === 'rock' && playerFigure === 'paper'):
+        default:
           alert(`
             ${computer}: ${computerFigure}
             ${player}: ${playerFigure}
             ${playerWinner}!`);
           result.player++;
-          break;
-        default:
-          alert(`
-            ${computer}: ${computerFigure}
-            ${player}: ${playerFigure}
-            ${draw}!`);
           break;
       }
 
